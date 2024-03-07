@@ -1,8 +1,9 @@
 import React from "react"
+import { baseUrl } from './config'
 
 function App(){
   React.useEffect(() => {
-    fetch('/api/plants?token=' + import.meta.env.VITE_API_KEY)
+    fetch(`${baseUrl}/plants?token=${import.meta.env.VITE_API_KEY}`)
       .then(resp => resp.json())
       .then(data => console.log(data))
   })
