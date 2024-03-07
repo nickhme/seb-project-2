@@ -2,7 +2,7 @@ import React from "react"
 
 function App(){
   React.useEffect(() => {
-    fetch('/api/v1/plants?token=' + import.meta.env.VITE_API_KEY)
+    fetch('/api/plants?token=' + import.meta.env.VITE_API_KEY)
       .then(resp => resp.json())
       .then(data => console.log(data))
   })
