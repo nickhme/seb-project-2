@@ -1,4 +1,8 @@
 import React from "react"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Plants from "./components/Plants"
+import Home from './components/Home'
+import Navbar from "./components/Navbar"
 
 function App(){
   React.useEffect(() => {
@@ -7,12 +11,15 @@ function App(){
       .then(data => console.log(data))
   })
 
-  return <section className="section">
-    <div className="container">
-      <h1 className="title">Hello Plants</h1>
-      <img src="https://t4.ftcdn.net/jpg/01/79/88/65/360_F_179886510_6xf0RHhDnLN5ovd2qmGF4WaZMJjqrt6o.jpg" alt="plant" /> 
-    </div>    
-  </section>
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/plants" element={<Plants />} />
+      </Routes>
+    </Router>
+  )
 }
 
 export default App
