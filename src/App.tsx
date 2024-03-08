@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Plants from "./components/Plants"
 import Home from './components/Home'
 import Navbar from "./components/Navbar"
+import image from './assets/hero.jpg'
 
 function App(){
   React.useEffect(() => {
@@ -14,6 +15,7 @@ function App(){
   return (
     <Router>
       <Navbar />
+      <img src={image} alt="test image" />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/plants" element={<Plants />} />
